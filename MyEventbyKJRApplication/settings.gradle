@@ -1,0 +1,2 @@
+rootProject.name='MyEventbyKJRApplication'
+include ':app'
