@@ -12,3 +12,14 @@ class ToDo {
     var id : String? = null
     var event : String? = null
 }
+class AStudent {
+
+    companion object Factory1 {
+        fun create(): AStudent = AStudent()
+    }
+    var NewName: String? = null
+    var Id: String? = null
+    var NameStudent: String? = null
+    var IdStudent: String? = null
+}
+

@@ -8,9 +8,10 @@
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:text="TextView"
         android:textSize="24sp"
+        android:gravity="center"
         tools:layout_editor_absoluteX="18dp"
         tools:layout_editor_absoluteY="18dp" />
 </LinearLayout>

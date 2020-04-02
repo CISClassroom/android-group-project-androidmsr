@@ -9,6 +9,8 @@ import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.TextView
 import com.cis.lab.myeventbykjrapplication.R
+import com.cis.lab.myeventbykjrapplication.model.AStudent
+
 import com.cis.lab.myeventbykjrapplication.model.ToDo
 
 class ToDoItemAdapter(context: Context, toDoItemList: MutableList<ToDo>) : BaseAdapter() {
@@ -33,7 +35,7 @@ class ToDoItemAdapter(context: Context, toDoItemList: MutableList<ToDo>) : BaseA
             vh = view.tag as ListRowHolder
         }
 
-        vh.label.text =  name
+        vh.label.text = name
 
         return view
     }
@@ -53,4 +55,54 @@ class ToDoItemAdapter(context: Context, toDoItemList: MutableList<ToDo>) : BaseA
     private class ListRowHolder(row: View?) {
         val label: TextView = row!!.findViewById<TextView>(R.id.textView6) as TextView
     }
+
+}
+
+
+
+class ToDoStudentAdapter (context: android.content.Context, toDoStudentList: MutableList<AStudent>) : BaseAdapter() {
+
+        private val mInflater: LayoutInflater = LayoutInflater.from(context)
+        private var itemList = toDoStudentList
+
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            // create object from view
+            val name: String = itemList.get(position).NameStudent as String
+            //val Id: String = itemList.get(position).IdStudent as String
+            val view: View
+            val vh: ListRowHolder
+
+            // get list view
+            if (convertView == null) {
+                view = mInflater.inflate(R.layout.liststudent, parent, false)
+                vh = ListRowHolder(view)
+                view.tag = vh
+            } else {
+                view = convertView
+                vh = view.tag as ListRowHolder
+            }
+
+            // add text to view
+            vh.label2.text = name
+
+
+            return view
+        }
+
+        override fun getItem(index: Int): Any {
+            return itemList.get(index)
+        }
+
+        override fun getItemId(index: Int): Long {
+            return index.toLong()
+        }
+
+        override fun getCount(): Int {
+            return itemList.size
+        }
+
+        private class ListRowHolder(row: View?) {
+            val label2: TextView = row!!.findViewById<TextView>(R.id.textView17) as TextView
+        }
 }

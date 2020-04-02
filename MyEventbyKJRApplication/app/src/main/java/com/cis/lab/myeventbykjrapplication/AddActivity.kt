@@ -10,6 +10,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_add.*
+import kotlinx.android.synthetic.main.activity_add_student.*
+import kotlinx.android.synthetic.main.activity_result.*
 
 class AddActivity : AppCompatActivity() {
 
@@ -39,8 +41,10 @@ class AddActivity : AppCompatActivity() {
 
         button4.setOnClickListener {
             savedata()
+//            val intent = Intent(this@AddActivity, AddStudentActivity::class.java)
+//            intent.putExtra("email",textView5.text.toString())
+//            startActivity(intent)
         }
-
     }
     private fun savedata(){
         var name = editText3.text.toString().trim()
